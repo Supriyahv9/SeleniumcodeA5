@@ -1,0 +1,36 @@
+package BasicWebDriver;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class navigate1 {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+
+		//Launch empty chrome browser
+		ChromeDriver driver = new ChromeDriver();
+		//To maximize the window
+		driver.manage().window().maximize();
+		//Launch application
+		driver.get("https://www.ajio.com/");
+		//Enter perfumes in searchtf
+		driver.findElement(By.name("searchVal")).sendKeys("Perfumes");
+		//Click on search icon
+		driver.findElement(By.className("ic-search")).click();//Perfumes page
+		
+		Thread.sleep(2000);
+		
+		//navigate to back
+		driver.navigate().back();//HomePage
+	
+		Thread.sleep(2000);
+		//navigate to forward
+		driver.navigate().forward();//Perfumes page
+
+		Thread.sleep(2000);
+		//navigate to refresh
+		driver.navigate().refresh();//Perfumes page
+	}
+
+}
